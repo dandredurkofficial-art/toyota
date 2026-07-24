@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Toyota Models - Explore Our Lineup</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Custom Tailwind configuration for Toyota's classic look (reused)
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'toyota-dark': '#1A1A1A',        // Very dark grey for background
+                            'toyota-medium': '#2A2A2A',      // Slightly lighter dark grey for cards/nav
+                            'toyota-light': '#E0E0E0',       // Off-white for general text
+                            'toyota-accent': '#C0392B',      // A classic, rich red for accents
+                            'toyota-secondary': '#F39C12',   // A subtle gold/orange for secondary highlights (optional)
+                        },
+                        fontFamily: {
+                            heading: ['Playfair Display', 'serif'],
+                            sans: ['Lato', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+        <!-- Google Fonts (Playfair Display and Lato) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body class="bg-toyota-dark text-toyota-light font-sans antialiased">
+
+        <!-- Navigation Bar (reused from index.html) -->
+        <nav class="bg-toyota-medium p-4 shadow-xl fixed w-full z-50">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Brand Name / Logo -->
+                <a href="/" class="text-3xl font-heading font-extrabold text-toyota-accent hover:text-white transition-colors duration-300">TOYOTA</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Home</a>
+                    <a href="/models/index.html" class="text-toyota-accent font-semibold transition-colors duration-300 text-lg font-medium">Models</a> <!-- Active state -->
+                    <a href="/about/index.html" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">About</a>
+                    <a href="/contact/index.html" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-toyota-light hover:text-toyota-accent focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden bg-toyota-medium mt-4 p-4 rounded-lg shadow-lg">
+                <a href="/" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Home</a>
+                <a href="/models/index.html" class="block py-2 text-toyota-accent font-semibold transition-colors duration-300 text-lg font-medium border-b border-gray-700">Models</a>
+                <a href="/about/index.html" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">About</a>
+                <a href="/contact/index.html" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+            </div>
+        </nav>
+
+        <main class="container mx-auto py-16 md:py-24 px-4 pt-28 md:pt-32">
+            <h1 class="text-4xl md:text-5xl font-heading font-extrabold text-center mb-12 text-toyota-accent">Discover Our Full Lineup</h1>
+
+            <!-- Model Filters/Search (Optional) -->
+            <div class="mb-12 flex flex-wrap justify-center gap-4">
+                <input type="text" placeholder="Search models..." class="p-3 rounded-lg bg-toyota-medium border border-gray-700 text-toyota-light placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-toyota-accent w-full md:w-auto flex-grow max-w-md">
+                <select class="p-3 rounded-lg bg-toyota-medium border border-gray-700 text-toyota-light focus:outline-none focus:ring-2 focus:ring-toyota-accent">
+                    <option value="">All Types</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="truck">Truck</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="ev">Electric</option>
+                </select>
+                <select class="p-3 rounded-lg bg-toyota-medium border border-gray-700 text-toyota-light focus:outline-none focus:ring-2 focus:ring-toyota-accent">
+                    <option value="">All Segments</option>
+                    <option value="compact">Compact</option>
+                    <option value="midsize">Mid-size</option>
+                    <option value="fullsize">Full-size</option>
+                    <option value="luxury">Luxury</option>
+                </select>
+            </div>
+
+            <!-- Models Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Example Car Card 1: Camry -->
+                <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://source.unsplash.com/random/400x300/?toyota,camry,sedan" alt="Toyota Camry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota Camry</h3>
+                        <p class="text-toyota-light text-sm mb-4">Starting at $26,420</p>
+                        <ul class="text-toyota-light text-sm mb-4 list-disc list-inside text-left">
+                            <li>Dynamic Force Engine</li>
+                            <li>Toyota Safety Sense™ 2.5+</li>
+                            <li>Available All-Wheel Drive</li>
+                        </ul>
+                        <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition-colors duration-300 inline-block">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Example Car Card 2: RAV4 -->
+                <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://source.unsplash.com/random/400x300/?toyota,rav4,suv" alt="Toyota RAV4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota RAV4</h3>
+                        <p class="text-toyota-light text-sm mb-4">Starting at $28,475</p>
+                        <ul class="text-toyota-light text-sm mb-4 list-disc list-inside text-left">
+                            <li>Adventure-ready design</li>
+                            <li>Available Hybrid & Prime</li>
+                            <li>Multi-Terrain Select</li>
+                        </ul>
+                        <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition-colors duration-300 inline-block">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Example Car Card 3: Tacoma -->
+                <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://source.unsplash.com/random/400x300/?toyota,tacoma,truck" alt="Toyota Tacoma" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota Tacoma</h3>
+                        <p class="text-toyota-light text-sm mb-4">Starting at $28,600</p>
+                        <ul class="text-toyota-light text-sm mb-4 list-disc list-inside text-left">
+                            <li>Rugged off-road capability</li>
+                            <li>Powerful V6 engine</li>
+                            <li>Advanced towing features</li>
+                        </ul>
+                        <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition-colors duration-300 inline-block">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Example Car Card 4: Corolla -->
+                <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://source.unsplash.com/random/400x300/?toyota,corolla,compact" alt="Toyota Corolla" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota Corolla</h3>
+                        <p class="text-toyota-light text-sm mb-4">Starting at $21,700</p>
+                        <ul class="text-toyota-light text-sm mb-4 list-disc list-inside text-left">
+                            <li>Exceptional fuel economy</li>
+                            <li>Sleek, modern design</li>
+                            <li>Standard Toyota Safety Sense™</li>
+                        </ul>
+                        <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition-colors duration-300 inline-block">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Example Car Card 5: Highlander -->
+                <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://source.unsplash.com/random/400x300/?toyota,highlander,family" alt="Toyota Highlander" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota Highlander</h3>
+                        <p class="text-toyota-light text-sm mb-4">Starting at $36,620</p>
+                        <ul class="text-toyota-light text-sm mb-4 list-disc list-inside text-left">
+                            <li>Spacious 3-row seating</li>
+                            <li>Advanced safety features</li>
+                            <li>Powerful and efficient engine</li>
+                        </ul>
+                        <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition-colors duration-300 inline-block">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Example Car Card 6: Prius -->
+                <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://source.unsplash.com/random/400x300/?toyota,prius,hybrid" alt="Toyota Prius" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota Prius</h3>
+                        <p class="text-toyota-light text-sm mb-4">Starting at $27,650</p>
+                        <ul class="text-toyota-light text-sm mb-4 list-disc list-inside text-left">
+                            <li>Iconic hybrid efficiency</li>
+                            <li>Modern, sleek design</li>
+                            <li>Available Electronic On-Demand AWD</li>
+                        </ul>
+                        <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full text-sm transition-colors duration-300 inline-block">View Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer (reused from index.html) -->
+        <footer class="bg-toyota-dark py-8 text-center text-toyota-light mt-16">
+            <div class="container mx-auto px-4">
+                <p>© 2023 Toyota. All rights reserved.</p>
+                <div class="mt-6 space-x-6 text-2xl">
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Mobile Menu Toggle (reused from index.html) -->
+        <script>
+            document.getElementById('mobile-menu-button').onclick = function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            };
+        </script>
+    </body>
+    </html>
