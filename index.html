@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Toyota - Driving Innovation, Building Trust</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            // Custom Tailwind configuration for Toyota's classic look
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'toyota-dark': '#1A1A1A',        // Very dark grey for background
+                            'toyota-medium': '#2A2A2A',      // Slightly lighter dark grey for cards/nav
+                            'toyota-light': '#E0E0E0',       // Off-white for general text
+                            'toyota-accent': '#C0392B',      // A classic, rich red for accents
+                            'toyota-secondary': '#F39C12',   // A subtle gold/orange for secondary highlights (optional)
+                        },
+                        fontFamily: {
+                            // Playfair Display for elegant headings, Lato for clean body text
+                            heading: ['Playfair Display', 'serif'],
+                            sans: ['Lato', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+        <!-- Google Fonts (Playfair Display and Lato) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body class="bg-toyota-dark text-toyota-light font-sans antialiased">
 
+        <!-- Navigation Bar -->
+        <nav class="bg-toyota-medium p-4 shadow-xl fixed w-full z-50">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Brand Name / Logo -->
+                <a href="/" class="text-3xl font-heading font-extrabold text-toyota-accent hover:text-white transition-colors duration-300">TOYOTA</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Home</a>
+                    <a href="/models/index.html" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Models</a>
+                    <a href="/about/index.html" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">About</a>
+                    <a href="/contact/index.html" class="text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-toyota-light hover:text-toyota-accent focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div id="mobile-menu" class="md:hidden hidden bg-toyota-medium mt-4 p-4 rounded-lg shadow-lg">
+                <a href="/" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Home</a>
+                <a href="/models/index.html" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">Models</a>
+                <a href="/about/index.html" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium border-b border-gray-700">About</a>
+                <a href="/contact/index.html" class="block py-2 text-toyota-light hover:text-toyota-accent transition-colors duration-300 text-lg font-medium">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="relative bg-cover bg-center h-[70vh] md:h-screen flex items-center justify-center text-center p-4 pt-24 md:pt-0" 
+                style="background-image: url('https://source.unsplash.com/random/1920x1080/?toyota,car,luxury,classic');">
+            <!-- Overlay for readability -->
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-heading font-extrabold leading-tight mb-4 text-white drop-shadow-lg">
+                    Experience the Legacy of Toyota
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-toyota-light">
+                    Innovation, Reliability, and Unforgettable Journeys – Since 1937.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="/models/index.html" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center">
+                        <i class="fas fa-car mr-3"></i> Explore Models
+                    </a>
+                    <a href="/contact/index.html" class="bg-transparent border-2 border-toyota-accent text-toyota-accent hover:bg-toyota-accent hover:text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center">
+                        <i class="fas fa-headset mr-3"></i> Contact Sales
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Models Section -->
+        <section class="py-16 md:py-24 bg-toyota-dark">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-toyota-accent">Our Latest Innovations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Example Car Card 1 -->
+                    <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://source.unsplash.com/random/400x300/?toyota,sedan" alt="Toyota Camry" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota Camry</h3>
+                            <p class="text-toyota-light text-sm mb-4">Sophisticated Design, Dynamic Performance</p>
+                            <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 inline-block">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Example Car Card 2 -->
+                    <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://source.unsplash.com/random/400x300/?toyota,suv" alt="Toyota RAV4" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota RAV4</h3>
+                            <p class="text-toyota-light text-sm mb-4">Adventure-Ready, Fuel-Efficient</p>
+                            <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 inline-block">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Example Car Card 3 -->
+                    <div class="bg-toyota-medium rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://source.unsplash.com/random/400x300/?toyota,electric" alt="Toyota bZ4X" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold mb-2 text-white font-heading">Toyota bZ4X</h3>
+                            <p class="text-toyota-light text-sm mb-4">Electrified Future, Zero Emissions</p>
+                            <a href="#" class="bg-toyota-accent hover:bg-opacity-90 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 inline-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/models/index.html" class="mt-16 inline-block bg-transparent border-2 border-toyota-accent text-toyota-accent hover:bg-toyota-accent hover:text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300">View All Models</a>
+            </div>
+        </section>
+
+        <!-- Why Choose Toyota Section -->
+        <section class="bg-toyota-medium py-16 md:py-24 text-center px-4">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-12 text-white">Why Choose Toyota?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-toyota-dark rounded-lg shadow-lg">
+                        <i class="fas fa-shield-alt text-5xl text-toyota-accent mb-4"></i>
+                        <h3 class="text-2xl font-heading font-semibold mb-3 text-white">Unmatched Reliability</h3>
+                        <p class="text-toyota-light text-lg">Toyota's legendary durability means peace of mind for every journey.</p>
+                    </div>
+                    <div class="p-6 bg-toyota-dark rounded-lg shadow-lg">
+                        <i class="fas fa-lightbulb text-5xl text-toyota-accent mb-4"></i>
+                        <h3 class="text-2xl font-heading font-semibold mb-3 text-white">Pioneering Innovation</h3>
+                        <p class="text-toyota-light text-lg">Leading the way with cutting-edge technology and sustainable solutions.</p>
+                    </div>
+                    <div class="p-6 bg-toyota-dark rounded-lg shadow-lg">
+                        <i class="fas fa-users text-5xl text-toyota-accent mb-4"></i>
+                        <h3 class="text-2xl font-heading font-semibold mb-3 text-white">Customer Satisfaction</h3>
+                        <p class="text-toyota-light text-lg">Dedicated to exceptional service and building lasting relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-toyota-dark py-8 text-center text-toyota-light">
+            <div class="container mx-auto px-4">
+                <p>© 2023 Toyota. All rights reserved.</p>
+                <div class="mt-6 space-x-6 text-2xl">
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-toyota-accent transition-colors duration-300"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript for Mobile Menu Toggle -->
+        <script>
+            document.getElementById('mobile-menu-button').onclick = function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            };
+        </script>
+    </body>
+    </html>
